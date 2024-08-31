@@ -1,0 +1,87 @@
+version = 2
+final_space = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'session'
+    style = 'plain'
+    template = '{{ .UserName }} '
+    foreground = 'p:blue'
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    template = '{{ .Path }} '
+    foreground = 'p:pink'
+
+    [blocks.segments.properties]
+      style = 'full'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    foreground = 'p:lavender'
+    template = "{{ .HEAD }} <yellow>{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>"
+
+    [blocks.segments.properties]
+      branch_icon = '󰘬 '
+      fetch_status = true
+      fetch_upstream_icon = false
+      source = "cli"
+
+      [properties.mapped_branches]
+        "feat/*" = "🚀 "
+        "bug/*" = "🐛 "
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'pink'
+    background = 'transparent'
+    template = '{{ .FormattedMs }}'
+
+    [blocks.segments.properties]
+      threshold = 5000
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground_templates = [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}lavender{{end}}",
+    ]
+    background = 'transparent'
+    template = '❯'
+
+[transient_prompt]
+  foreground_templates = [
+    "{{if gt .Code 0}}red{{end}}",
+    "{{if eq .Code 0}}lavender{{end}}",
+  ]
+  background = 'transparent'
+  template = '❯ '
+
+[secondary_prompt]
+  foreground = 'lavender'
+  background = 'transparent'
+  template = '❯❯ '
+
+[palette]
+  blue = '#8CAAEE'
+  closer = 'p:os'
+  lavender = '#BABBF1'
+  os = '#ACB0BE'
+  pink = '#F4B8E4'
