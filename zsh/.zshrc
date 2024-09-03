@@ -27,3 +27,5 @@ source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 # Start up Oh My Posh
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/catppuccin_dobsondev.toml)"
+
+export TERM=screen-256color-bce
