@@ -9,5 +9,5 @@ See:
 3. Navigate to the **Colors** tab
 4. Click on **Color Presets**
 5. Click on **Import**
-6. Select the `iterm2/Catppuccin Frappe Colors.itermcolors` file
-8. Click on **Color Presets** and choose the `Catppuccin Frappe Colors`
+6. Select the `iterm2/Catppuccin Mocha.itermcolors` file
+8. Click on **Color Presets** and choose the `Catppuccin Mocha`
