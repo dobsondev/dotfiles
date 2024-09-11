@@ -3,8 +3,8 @@ layout {
         plugin location="tab-bar"
     }
     pane split_direction="vertical" {
-        pane size="70%"
-        pane split_direction="horizontal" size="30%" {
+        pane size="60%"
+        pane split_direction="horizontal" size="40%" {
             pane
             pane
         }

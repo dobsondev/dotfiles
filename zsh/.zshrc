@@ -12,7 +12,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -28,4 +28,4 @@ source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 # Start up Oh My Posh
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/catppuccin_dobsondev.toml)"
 
-export TERM=screen-256color-bce
+export TERM=xterm-256color
