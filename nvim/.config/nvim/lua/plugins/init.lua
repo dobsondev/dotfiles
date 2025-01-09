@@ -12,6 +12,16 @@ return {
       require "configs.lspconfig"
     end,
   },
+  
+  -- LSPs and such we want to install with Mason
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "gopls",
+      }
+    }
+  }
 
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
