@@ -9,14 +9,12 @@ These are all my configuration files for macOS.
 First, start by installing all of the following:
 
 1. Install [Homebrew](https://brew.sh/)
-2. Install [iTerm2](https://iterm2.com/) ([via Homebrew](https://formulae.brew.sh/cask/iterm2))
+2. Install [Ghostty](https://ghostty.org/download) ([via Homebrew](https://formulae.brew.sh/cask/ghostty))
 3. Install [Neovim](https://neovim.io/) ([via Homebrew](https://formulae.brew.sh/formula/neovim))
 4. Install [Stow](https://formulae.brew.sh/formula/stow) ([via Homebrew](https://formulae.brew.sh/formula/stow))
 5. Install [Oh My Zsh](https://ohmyz.sh/)
 6. Install [Oh My Posh](https://ohmyposh.dev/) ([via Homebrew](https://formulae.brew.sh/formula/oh-my-posh))
 7. Install [Zellij](https://zellij.dev/) ([via Homebrew](https://formulae.brew.sh/formula/zellij))
-
-### Setup iTerm2
 
 ## Note on directory structure for use with `stow`
 
