@@ -1,5 +1,22 @@
-version = 2
+version = 3
 final_space = true
+
+[palette]
+  blue = '#89B4FA'
+  closer = 'p:os'
+  lavender = '#B4BEFE'
+  os = '#ACB0BE'
+  pink = '#F5C2E7'
+
+[secondary_prompt]
+  template = '❯❯ '
+  foreground = 'lavender'
+  background = 'transparent'
+
+[transient_prompt]
+  template = '❯ '
+  background = 'transparent'
+  foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}lavender{{end}}']
 
 [[blocks]]
   type = 'prompt'
@@ -7,48 +24,50 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    type = 'session'
-    style = 'plain'
     template = '{{ .UserName }} '
     foreground = 'p:blue'
-
-  [[blocks.segments]]
-    type = 'path'
+    type = 'session'
     style = 'plain'
-    template = '{{ .Path }} '
-    foreground = 'p:pink'
 
     [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '{{ .Path }} '
+    foreground = 'p:pink'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
       style = 'full'
 
   [[blocks.segments]]
+    template = '{{ .HEAD }} <yellow>{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    foreground = 'p:lavender'
     type = 'git'
     style = 'plain'
-    foreground = 'p:lavender'
-    template = "{{ .HEAD }} <yellow>{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>"
 
     [blocks.segments.properties]
       branch_icon = '󰘬 '
+      cache_duration = 'none'
       fetch_status = true
       fetch_upstream_icon = false
-      source = "cli"
-
-      [properties.mapped_branches]
-        "feat/*" = "🚀 "
-        "bug/*" = "🐛 "
+      source = 'cli'
 
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'
 
   [[blocks.segments]]
-    type = 'executiontime'
-    style = 'plain'
+    template = '{{ .FormattedMs }}'
     foreground = 'pink'
     background = 'transparent'
-    template = '{{ .FormattedMs }}'
+    type = 'executiontime'
+    style = 'plain'
 
     [blocks.segments.properties]
+      cache_duration = 'none'
       threshold = 5000
 
 [[blocks]]
@@ -57,31 +76,11 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
+    template = '❯'
+    background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = [
-      "{{if gt .Code 0}}red{{end}}",
-      "{{if eq .Code 0}}lavender{{end}}",
-    ]
-    background = 'transparent'
-    template = '❯'
+    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}lavender{{end}}']
 
-[transient_prompt]
-  foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}lavender{{end}}",
-  ]
-  background = 'transparent'
-  template = '❯ '
-
-[secondary_prompt]
-  foreground = 'lavender'
-  background = 'transparent'
-  template = '❯❯ '
-
-[palette]
-  blue = '#89B4FA'
-  closer = 'p:os'
-  lavender = '#B4BEFE'
-  os = '#ACB0BE'
-  pink = '#F5C2E7'
+    [blocks.segments.properties]
+      cache_duration = 'none'
