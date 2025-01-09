@@ -1,3 +1,9 @@
+## 2025 Update
+
+I am now trying out Ghostty as my main terminal and it appears I won't be going backwards anytime soon to iTerm so this is essentially an archive now.
+
+---
+
 See:
 - https://github.com/catppuccin/iterm
 
