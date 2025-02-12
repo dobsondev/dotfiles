@@ -14,7 +14,6 @@ First, start by installing all of the following:
 4. Install [Stow](https://formulae.brew.sh/formula/stow) ([via Homebrew](https://formulae.brew.sh/formula/stow))
 5. Install [Oh My Zsh](https://ohmyz.sh/)
 6. Install [Oh My Posh](https://ohmyposh.dev/) ([via Homebrew](https://formulae.brew.sh/formula/oh-my-posh))
-7. Install [Zellij](https://zellij.dev/) ([via Homebrew](https://formulae.brew.sh/formula/zellij))
 
 ## Note on directory structure for use with `stow`
 
