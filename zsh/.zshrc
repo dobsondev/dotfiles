@@ -24,5 +24,8 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/catppuccin_dobsondev.t
 
 export TERM=xterm-256color
 
+# Add Go binaries to path
+export PATH="$(go env GOPATH)/go/bin:$PATH"
+
 # Run neofetch on startup because it's cool
 neofetch
