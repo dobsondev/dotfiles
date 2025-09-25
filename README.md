@@ -62,3 +62,23 @@ This is because we want our `nvim` config folder to end up in `~/.config/nvim`. 
     ├── iterm2
     └── nvim -> ../Development/dotfiles/nvim/.config/nvim
 ```
+
+## Storing Secrets in `.zshrc`
+
+Use 1Password:
+
+```bash
+export SECRET=op://<vault-name>/<item-name>/[section-name/]<field-name>
+```
+
+Using Keychain:
+
+```bash
+export SECRET=$(security find-generic-password -a "$USER" -s "SECRET" -w)
+```
+
+Note: replace both instances of `SECRET` above with an actual secret name. To add the secret in the first place, use the following command:
+
+```bash
+security add-generic-password -a "$USER" -s "SECRET" -w
+```

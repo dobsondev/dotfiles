@@ -3,3 +3,4 @@ window-height = 60
 window-width = 160
 
 theme = catppuccin-mocha
+keybind = shift+enter=text:\n
