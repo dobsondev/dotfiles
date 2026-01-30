@@ -1,0 +1,1 @@
+/home/dobsondev/.config/omarchy/current/theme/neovim.lua
