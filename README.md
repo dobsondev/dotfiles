@@ -14,6 +14,10 @@ First, start by installing all of the following:
 4. Install [Stow](https://formulae.brew.sh/formula/stow) ([via Homebrew](https://formulae.brew.sh/formula/stow))
 5. Install [Oh My Zsh](https://ohmyz.sh/)
 6. Install [Oh My Posh](https://ohmyposh.dev/) ([via Homebrew](https://formulae.brew.sh/formula/oh-my-posh))
+7. Install [Helix](https://helix-editor.com/) ([via Homebrew](https://formulae.brew.sh/formula/helix))
+8. Install [herdr](https://herdr.dev/) ([via Homebrew](https://formulae.brew.sh/formula/herdr))
+
+Then symlink all of the configs into your home directory with `./stow-all.sh` (and remove them again with `./unstow-all.sh`).
 
 ## Note on directory structure for use with `stow`
 
@@ -21,11 +25,16 @@ From the [GNU Stow website](https://www.gnu.org/software/stow/):
 > GNU Stow is a symlink farm manager which takes distinct packages of software and/or data located in separate directories on the filesystem, and makes them appear to be installed in the same place. This is particularly useful for keeping track of system-wide and per-user installations of software built from source, but can also facilitate a more controlled approach to management of configuration files in the user's home directory, especially when coupled with version control systems.
 
 The directories that are used by `stow` in this repo are:
+- `ghostty/`
+- `helix/`
+- `herdr/`
 - `nvim/`
 - `oh-my-posh/`
 - `zsh/`
 
 Everything in the above directories must be setup exactly how you want it to be symlinked by `stow` into your home directory.
+
+> **Note:** `herdr` is stowed with `--no-folding`. herdr keeps runtime state (sockets, logs, session snapshots) in `~/.config/herdr`, so we only want `config.toml` symlinked rather than the whole directory, otherwise all of that state would end up inside this repo.
 
 For example, we have this:
 
